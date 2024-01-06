@@ -4,6 +4,7 @@ import numpy as np
 import pickle 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+import time
 
 def load_model():
     with open('saved.pkl', 'rb') as file:
