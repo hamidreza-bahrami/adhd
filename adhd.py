@@ -84,9 +84,9 @@ def show_page():
 
         y_prediction = model.predict(x)
         if y_prediction == True:
-            st.write("<h4 style='text-align: center; color: gray;'>بر اساس داده های وارد شده، شما دارای بیش فعالی و نقص توجه هستید</h4>", unsafe_allow_html=True)
-            st.write("<h5 style='text-align: center; color: gray;'>برای درمان به روانشناس مراجعه کنید</h5>", unsafe_allow_html=True)
+            st.write("<h4 style='text-align: right; color: gray;'>بر اساس داده های وارد شده، شما دارای بیش فعالی و نقص توجه هستید</h4>", unsafe_allow_html=True)
+            st.write("<h5 style='text-align: right; color: gray;'>برای درمان به روانشناس مراجعه کنید</h5>", unsafe_allow_html=True)
         elif y_prediction == False:
-            st.write("<h4 style='text-align: center; color: gray;'>بر اساس داده های وارد شده، شما در سلامتی کامل هستید</h4>", unsafe_allow_html=True)
+            st.write("<h4 style='text-align: right; color: gray;'>بر اساس داده های وارد شده، شما در سلامتی کامل هستید</h4>", unsafe_allow_html=True)
 
 show_page()
