@@ -75,8 +75,12 @@ def show_page():
 
     button = st.button('معاینه و تشخیص')
     if button:
-        x = np.array([[restlessness, hurry, talkalot, moving, restlessness2, control, cantdo, mistake, focus,
-                       motive, forget, daily, badword, patience, stoptalk, unlike, disturbed]])
+        with st.chat_message("assistant"):
+                with st.spinner('''درحال بررسی لطفا صبور باشید'''):
+                    time.sleep(3)
+                    st.success(u'\u2713''بررسی انجام شد')
+                    x = np.array([[restlessness, hurry, talkalot, moving, restlessness2, control, cantdo, mistake, focus,
+                                   motive, forget, daily, badword, patience, stoptalk, unlike, disturbed]])
 
         y_prediction = model.predict(x)
         if y_prediction == True:
