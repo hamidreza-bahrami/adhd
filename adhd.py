@@ -6,6 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import time
 
+st.set_page_config(page_title='تشخیص بیش فعالی - RoboAi', layout='centered', page_icon='🤖')
+
 def load_model():
     with open('saved.pkl', 'rb') as file:
         data = pickle.load(file)
