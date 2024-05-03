@@ -20,10 +20,31 @@ x = data['x']
 
 def show_page():
     st.write("<h1 style='text-align: center; color: blue;'>مدل تشخیص بیش فعالی و نقص توجه</h1>", unsafe_allow_html=True)
-    st.write("<h2 style='text-align: center; color: gray;'>علائم خود را وارد کنید</h2>", unsafe_allow_html=True)
     st.write("<h4 style='text-align: center; color: gray;'>True = بله , False = خیر</h4>", unsafe_allow_html=True)
     st.write("<h4 style='text-align: center; color: gray;'>Robo-Ai.ir طراحی شده توسط</h4>", unsafe_allow_html=True)
     st.link_button("Robo-Ai بازگشت به", "https://robo-ai.ir")
+
+    with st.sidebar:
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.write(' ')
+        with col2:
+            st.image('img.png')
+        with col3:
+            st.write(' ')
+        
+        st.divider()
+        texty = st.text_input('نظر خود را نسبت به مدل اینجا بنویسید')
+        if texty:
+            dok = st.button('ارسال نظر')
+            if dok:
+                with st.chat_message("assistant"):
+                    with st.spinner('''در حال ارسال'''):
+                        time.sleep(2)
+                        st.success(u'\u2713''ارسال شد ، مچکرم') 
+        st.divider()
+        st.write('Developed & Designed by')
+        st.write('Hamidreza Bahrami')
 
     restlessness = (True , False)
     restlessness = st.selectbox('همواره سرجای خود تکان می خورید و آرام ندارید', restlessness)
@@ -38,7 +59,7 @@ def show_page():
     moving = st.selectbox('در شرایطی مانند کلاس یا جلسه، از جا بلند می شوید و حرکت می کنید', moving)
 
     restlessness2 = (True , False)
-    restlessness2 = st.selectbox('احساس بیقراری می کنید', restlessness2)
+    restlessness2 = st.selectbox('احساس بی قراری می کنید', restlessness2)
 
     control = (True , False)
     control = st.selectbox('به سختی نیاز های خود را کنترل می کنید', control)
